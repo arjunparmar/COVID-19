@@ -49,3 +49,8 @@ Due to the scarcity of publicly available CXRs of severe COVID-19 cases, we were
 |Test Acc:99.33%|Loss:0.0123|
 |:---:|:---:|
 |![](https://github.com/arjunparmar/COVID-19/blob/master/Data/accuracy.png)|![](https://github.com/arjunparmar/COVID-19/blob/master/Data/loss.png)|<br/>
+# Conclusion
+|Test Accuracy|99.33%|
+|:---:|:---:|
+|Loss|0.0123|
+|F1 Score|0.55|
