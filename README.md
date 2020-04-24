@@ -54,3 +54,6 @@ Due to the scarcity of publicly available CXRs of severe COVID-19 cases, we were
 |:---:|:---:|
 |**Loss**|**0.0123**|
 |**F1 Score**|**0.55**|<br/>
+# Install Dependencies
+Install package python-opencv with following command in terminal (as root user).<br/>
+```$ sudo apt-get install python-opencv```
