@@ -42,3 +42,5 @@ The transition layers in the network reduces the number of features to \theta x 
 --Using the same set of parameters used for ResNet architectures and replacing the bottleneck layers of resnet with Dense blocks, the authors have seen similar performance on ImageNet dataset. On CIFAR-10, CIFAR-100 and other datasets, DenseNet blocks have shown incremental performance.
 # Measures Against Overfitting
 We applied multiple strategies to combat overfitting, such as dropout regularization and data augmentation (varrying brightness of image by +10% and -10%).
+# Class Imbalance
+Due to the scarcity of publicly available CXRs of severe COVID-19 cases, we were compelled to apply class imbalancing methods to mitigate the effects of having one class outweighing several others. If you are versed in machine learning, you know that accuracy can be misleadingly high in classification problems when a class is underrepresented. We were left with a dilemma, as we also did not want to limit our training data to only 189 non-COVID-19 examples, as there would have been about 400 images total.As above said, we apply Image Augmentation to overcome this issue.
