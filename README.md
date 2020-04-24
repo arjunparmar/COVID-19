@@ -23,3 +23,15 @@ Images were resized to have the following shape: 500×500×3. By reducing the im
 images are normalized by scaling them so their pixel values are in the range [0, 1]
 ## Binary Classification
 We first considered a binary classification problem where the goal was to detect whether an X-ray shows evidence of COVID-19 infection. The classifier was to assign X-ray images to either a non-COVID-19 class or a COVID-19 class. A deep convolutional neural network architecture was trained to perform binary classification. The model was trained using the RMSprop optimizer and binary cross-entropy loss. All training code was written using TensorFlow 1.15.
+# Architecture
+## Densenet
+The name refers to Densely connected convolutional network, written by Gao Huang, Zhuang Liu, Laurens van der Maaten and Kilian Q. Weinberger, the paper garnered around 700 citations.<br/>
+By this time around, Deep learning kind of started as replicating human vision has turned into an engineering practice, people are trying different things looking at the accuracies, network weights and visualizing features. There was a saying around this period, that NIPS conference paper acceptance has been degraded. Researchers are keeping lot of effort in engineering these networks instead of trying something different. Having said all of this, this paper is still a good read and has improved the accuracy of image classification challenges.<br/>
+DenseNet is very similar to ResNet with two important changes.<br/>
+1)Instead of adding up the features as in ResNet, they concat the feature maps.<br/>
+2)Instead of just adding one skip connection, add the skip connection from every previous layer. Meaning, In a ResNet architecture, we add up (l-1) and (1) layer features. In DenseNet, for Lth layer we concat all the features from [1….(l-1)] layers.<br/>
+The author quotes “DenseNet layers are very narrow (eg 12 filters per layer) adding only a small set of feature maps to the “collective knowledge” of the network and keep the remaining feature maps unchanged- and the final classifier makes a decision based on all feature-maps in the network.”<br/>
+![Densenet](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Densenet1.png)<br/>
+Each block contains a set of conv blocks (Called bottleneck layer if contains a 1*1 conv layer to reduce features followed by 3*3 conv layers)depending on the architecture depth. The following graph shows DenseNet-121, DenseNet-169, DenseNet-201, DenseNet-264.<br/>
+![Densenet](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Densenet2.png)<br/>
+
