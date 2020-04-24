@@ -23,3 +23,25 @@ Images were resized to have the following shape: 500×500×3. By reducing the im
 images are normalized by scaling them so their pixel values are in the range [0, 1]
 ## Binary Classification
 We first considered a binary classification problem where the goal was to detect whether an X-ray shows evidence of COVID-19 infection. The classifier was to assign X-ray images to either a non-COVID-19 class or a COVID-19 class. A deep convolutional neural network architecture was trained to perform binary classification. The model was trained using the RMSprop optimizer and binary cross-entropy loss. All training code was written using TensorFlow 1.15.
+# Architecture
+## Densenet
+The name refers to Densely connected convolutional network, written by Gao Huang, Zhuang Liu, Laurens van der Maaten and Kilian Q. Weinberger, the paper garnered around 700 citations.<br/>
+By this time around, Deep learning kind of started as replicating human vision has turned into an engineering practice, people are trying different things looking at the accuracies, network weights and visualizing features. There was a saying around this period, that NIPS conference paper acceptance has been degraded. Researchers are keeping lot of effort in engineering these networks instead of trying something different. Having said all of this, this paper is still a good read and has improved the accuracy of image classification challenges.<br/>
+DenseNet is very similar to ResNet with two important changes.<br/>
+1)Instead of adding up the features as in ResNet, they concat the feature maps.<br/>
+2)Instead of just adding one skip connection, add the skip connection from every previous layer. Meaning, In a ResNet architecture, we add up (l-1) and (1) layer features. In DenseNet, for Lth layer we concat all the features from [1….(l-1)] layers.<br/>
+The author quotes “DenseNet layers are very narrow (eg 12 filters per layer) adding only a small set of feature maps to the “collective knowledge” of the network and keep the remaining feature maps unchanged- and the final classifier makes a decision based on all feature-maps in the network.”<br/>
+![Densenet](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Densenet1.png)<br/>
+Each block contains a set of conv blocks (Called bottleneck layer if contains a 1*1 conv layer to reduce features followed by 3*3 conv layers)depending on the architecture depth. The following graph shows DenseNet-121, DenseNet-169, DenseNet-201, DenseNet-264.<br/>
+![Densenet](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Densenet2.png)<br/>
+Growth rate defines the number of features each dense block will began with. The above diagram uses 32 features. Having this kind of architectures reduces the parameters we train by a lot. For example a resnet conv block may contain [96, 96, 96] feature maps inside a block, where as DenseNet contains [32, 64, 96]. The author claims and has been proven by some other paper called stochastic depth network (where they train a ResNet architecture by dropping a few layers randomly every iteration) that most of the features learned by ResNet are redundant. The author basic intuition is also that connecting layers in this way where each layer contains the features of all the previous layers, will not allow it it learn redundant features.<br/>
+The transition layers in the network reduces the number of features to \theta x m, where \theta takes values between (0, 1). \theta x m is also used in bottleneck layers. when \theta <0 for both transition layers and bottleneck layers it is called DenseNet-BC, when \theta <0 for only transition layers it is called DenseNet-C.<br/>
+![Densenet](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Densenet.png)<br/>
+## Results:
+--It uses 3x less parameters compared to ResNet for similar number of layers.<br/>
+--Using the same set of parameters used for ResNet architectures and replacing the bottleneck layers of resnet with Dense blocks, the authors have seen similar performance on ImageNet dataset. On CIFAR-10, CIFAR-100 and other datasets, DenseNet blocks have shown incremental performance.
+[Paper on Densenet](https://arxiv.org/pdf/1608.06993.pdf)
+# Measures Against Overfitting
+We applied multiple strategies to combat overfitting, such as dropout regularization and data augmentation (varrying brightness of image by +10% and -10%).
+# Class Imbalance
+Due to the scarcity of publicly available CXRs of severe COVID-19 cases, we were compelled to apply class imbalancing methods to mitigate the effects of having one class outweighing several others. If you are versed in machine learning, you know that accuracy can be misleadingly high in classification problems when a class is underrepresented. We were left with a dilemma, as we also did not want to limit our training data to only 189 non-COVID-19 examples, as there would have been about 400 images total.As above said, we apply Image Augmentation to overcome this issue.
