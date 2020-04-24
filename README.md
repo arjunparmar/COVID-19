@@ -16,4 +16,4 @@ For the purpose of this experiment, data was taken from two repositories:<br/>
 2)The [Chest X-Ray Images (Pneumonia) dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) available on Kaggle contains several deidentified CXRs and includes a label indicating whether the image shows evidence of pneumonia. We would like to take this opportunity to thank the Paul Mooney Developer Advocate at KaggleBoulder, United States and all other involved entities for creating this dataset. See Figure 1b for an sample image.<br/>
 |![](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Positive.jpg)|![](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Negative.jpg)|
 |:---: | :---: |
-|Figure 1a|Figurw 1b|
+|Figure 1a|Figure 1b|
