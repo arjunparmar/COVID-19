@@ -56,10 +56,10 @@ Due to the scarcity of publicly available CXRs of severe COVID-19 cases, we were
 |**F1 Score**|**0.55**|<br/>
 # Install Dependencies
 Ubuntu 16.10 and 17.04 do not come with Python 3.6 by default, but it is in the Universe repository. You should be able to install it with the following commands:<br/>
-```$ sudo apt-get install python3.6```
+```$ sudo apt-get install python3.6```<br/>
 Install package python-opencv with following command in terminal (as root user).<br/>
-```$ sudo apt-get install python-opencv```
+```$ sudo apt-get install python-opencv```<br/>
 Install TensorFlow with Python's pip package manager.</br>
-```pip install tensorflow==1.15```
+```pip install tensorflow==1.15```<br/>
 you can install Matplotlib and all its dependencies with from the Terminal command line:<br/>
-```pip install matplotlib```
+```pip install matplotlib```<br/>
