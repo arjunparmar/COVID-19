@@ -52,7 +52,5 @@ Due to the scarcity of publicly available CXRs of severe COVID-19 cases, we were
 # Conclusion
 |Test Accuracy|99.33%|
 |:---:|:---:|
-|Loss|0.0123|
-|:---:|:---:|
-|F1 Score|0.55|
-|:---:|:---:|<br/>
+|**Loss**|**0.0123**|
+|F1 Score|0.55|<br/>
