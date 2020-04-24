@@ -40,3 +40,5 @@ The transition layers in the network reduces the number of features to \theta x 
 ## Results:
 --It uses 3x less parameters compared to ResNet for similar number of layers.<br/>
 --Using the same set of parameters used for ResNet architectures and replacing the bottleneck layers of resnet with Dense blocks, the authors have seen similar performance on ImageNet dataset. On CIFAR-10, CIFAR-100 and other datasets, DenseNet blocks have shown incremental performance.
+# Measures Against Overfitting
+We applied multiple strategies to combat overfitting, such as dropout regularization and data augmentation (varrying brightness of image by +10% and -10%).
