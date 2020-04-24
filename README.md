@@ -46,6 +46,6 @@ We applied multiple strategies to combat overfitting, such as dropout regulariza
 # Class Imbalance
 Due to the scarcity of publicly available CXRs of severe COVID-19 cases, we were compelled to apply class imbalancing methods to mitigate the effects of having one class outweighing several others. If you are versed in machine learning, you know that accuracy can be misleadingly high in classification problems when a class is underrepresented. We were left with a dilemma, as we also did not want to limit our training data to only 189 non-COVID-19 examples, as there would have been about 400 images total.As above said, we apply Image Augmentation to overcome this issue.
 # Result
-|Test Acc:00.58%|Loss:0.0123|
+|Test Acc:99.33%|Loss:0.0123|
 |:---:|:---:|
 |![](https://github.com/arjunparmar/COVID-19/blob/master/Data/accuracy.png)|![](https://github.com/arjunparmar/COVID-19/blob/master/Data/loss.png)|<br/>
