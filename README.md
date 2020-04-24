@@ -21,5 +21,5 @@ For the purpose of this experiment, data was taken from two repositories:<br/>
 Prior to training, preprocessing was implemented on the images themselves. ImageDataGenerator (from tensorflow.keras) was employed to perform preprocessing of image batches prior to training. The following transformations were applied to images:<br/>
 Images were resized to have the following shape: 500×500×3. By reducing the image size, the number of parameters in the neural network was decreased.<br/>
 images are normalized by scaling them so their pixel values are in the range [0, 1]
-##Binary Classification
+## Binary Classification
 We first considered a binary classification problem where the goal was to detect whether an X-ray shows evidence of COVID-19 infection. The classifier was to assign X-ray images to either a non-COVID-19 class or a COVID-19 class. A deep convolutional neural network architecture was trained to perform binary classification. The model was trained using the RMSprop optimizer and binary cross-entropy loss. All training code was written using TensorFlow 1.15.
