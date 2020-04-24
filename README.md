@@ -16,8 +16,8 @@ For the purpose of this experiment, data was taken from two repositories:<br/>
 2)The [Chest X-Ray Images (Pneumonia) dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) available on Kaggle contains several deidentified CXRs and includes a label indicating whether the image shows evidence of pneumonia. We would like to take this opportunity to thank the Paul Mooney Developer Advocate at KaggleBoulder, United States and all other involved entities for creating this dataset. See Figure 1b for an sample image.<br/>
 |![](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Positive.jpg)|![](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Negative.jpg)|
 |:---: | :---: |
-|Figure 1a|Figure 1b|
-##Data Preprocessing
+|Figure 1a|Figure 1b|<br/>
+## Data Preprocessing
 Prior to training, preprocessing was implemented on the images themselves. ImageDataGenerator (from tensorflow.keras) was employed to perform preprocessing of image batches prior to training. The following transformations were applied to images:<br/>
 Images were resized to have the following shape: 500×500×3. By reducing the image size, the number of parameters in the neural network was decreased.<br/>
 images are normalized by scaling them so their pixel values are in the range [0, 1]
