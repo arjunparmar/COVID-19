@@ -63,5 +63,46 @@ Install TensorFlow with Python's pip package manager.</br>
 ```pip install tensorflow==1.15```<br/>
 you can install Matplotlib and all its dependencies with from the Terminal command line:<br/>
 ```pip install matplotlib```<br/>
+# Deploy a Machine Learning model using Django
+## What is the Django REST Framework?
+Django is a high-level Python Web Development framework that encourages rapid development and clean, pragmatic design. It has been built by experienced developers, and takes care of much of the hassle of Web development. It is also free and open source.<br/>
+Django REST Framework is a powerful and flexible toolkit for building Web APIs which can be used to Machine Learning model deployment. With the help of Django REST framework, complex machine learning models can be easily used just by calling an API endpoint.<br/>
+## Installation
+Django can be installed using a simple pip install.<br/>
+```$ pip install django```<br/>
+```$ pip install djangorestframework```<br/>
+## Let’s Deploy!
+### 1. Create a Django Project<br/>
+To start a new Django project, we first need to take care of some initial setup. Namely, we will need to auto-generate some code that establishes a Django project — a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings. To start a new project, $ cd into the directory where you want to create the project, then type the following command.<br/>
+```$ django-admin startproject deploy```<br/>
+### 2. Create a Django App
+Now, we create a Django app. Each application written in Django consists of a Python package, that follows a certain convention. Django comes with a utility, that automatically generates the basic directory structure of the app, enabling us to focus on writing code rather than creating directories.<br/>
+```$ cd deploy```<br/>
+```$ python manage.py startapp fastbert```<br/>
+### 3. Editing “Django” apps.py
+### 4. Editing views.py
+### 5. Editing urls.py
+### 6. Migrations and Superuser
+The next step is to make migrations and create a superuser. Migrations are Django’s way of propagating changes we make to our models (adding a field, deleting a model, etc.) into our database schema. They’re designed to be mostly automatic, but we’ll need to know when to make migrations, when to run them, and the common problems we might run into. Superuser is a user who can login to the admin site.<br/>
+#### Create migrations,<br/>
+```$ python manage.py makemigrations```<br/>
+```$ python manage.py migrate```<br/>
+-->```makemigrations``` is responsible for creating new migrations based on the changes we make to our models.<br/>
+-->```migrate``` is responsible for applying and unapplying migrations.<br/>
+#### Create Superuser,
+```$ python manage.py createsuperuser```<br/>
+#### Enter the desired username and press enter.
+```Username: user```
+#### Next, enter desired email address:
+```Email address: user@example.com```
+#### The final step is to enter a password.
+```Password: **********```<br/>
+```Password (again): *********```<br/>
+```Superuser created successfully.```<br/>
+### 7. Run Server
+Now, we are all set to deploy our Machine Learning model on the local host. Run server by using the command,<br/>
+```$ python manage.py runserver```
+### 8. Testing the API
+Let’s test our REST API! We open our browser and type the following URL-```localhost:8002```
 # WEB-GUI:
 [![WEB-GUI](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/ScreenStart.png)](https://youtu.be/_YsPBzmmdE4)
