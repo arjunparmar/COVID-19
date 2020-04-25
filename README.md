@@ -74,11 +74,11 @@ Django can be installed using a simple pip install.<br/>
 ## Let’s Deploy!
 ### 1. Create a Django Project<br/>
 To start a new Django project, we first need to take care of some initial setup. Namely, we will need to auto-generate some code that establishes a Django project — a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings. To start a new project, $ cd into the directory where you want to create the project, then type the following command.<br/>
-```$ django-admin startproject deploy```<br/>
+```$ django-admin startproject WEB_APP```<br/>
 ### 2. Create a Django App
 Now, we create a Django app. Each application written in Django consists of a Python package, that follows a certain convention. Django comes with a utility, that automatically generates the basic directory structure of the app, enabling us to focus on writing code rather than creating directories.<br/>
-```$ cd deploy```<br/>
-```$ python manage.py startapp fastbert```<br/>
+```$ cd WEB_APP```<br/>
+```$ python manage.py startapp predict```<br/>
 ### 3. Editing “Django” apps.py
 ### 4. Editing views.py
 ### 5. Editing urls.py
@@ -104,5 +104,5 @@ Now, we are all set to deploy our Machine Learning model on the local host. Run 
 ```$ python manage.py runserver```
 ### 8. Testing the API
 Let’s test our REST API! We open our browser and type the following URL-```localhost:8002```
-# Here, We go with API:
+# Final Testing Video of COVID-19:
 [![WEB-GUI](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/ScreenStart.png)](https://youtu.be/_YsPBzmmdE4)
