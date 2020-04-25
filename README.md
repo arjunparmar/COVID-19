@@ -104,5 +104,5 @@ Now, we are all set to deploy our Machine Learning model on the local host. Run 
 ```$ python manage.py runserver```
 ### 8. Testing the API
 Let’s test our REST API! We open our browser and type the following URL-```localhost:8002```
-# WEB-GUI:
+# Here, We go with API:
 [![WEB-GUI](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/ScreenStart.png)](https://youtu.be/_YsPBzmmdE4)
