@@ -64,4 +64,4 @@ Install TensorFlow with Python's pip package manager.</br>
 you can install Matplotlib and all its dependencies with from the Terminal command line:<br/>
 ```pip install matplotlib```<br/>
 # WEB-GUI Video
-[![WEB-GUI](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Positive.jpg)](https://github.com/arjunparmar/COVID-19/blob/master/Data/WEBGUI.mp4)
+[![WEB-GUI](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/Positive.jpg)](https://youtu.be/_YsPBzmmdE4)
