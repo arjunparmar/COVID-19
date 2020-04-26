@@ -47,6 +47,7 @@
 # distributed==2.5.2
 dj-database-url==0.5.0
 Django==2.2.5
+django-heroku==0.3.1
 django-resized==0.3.9
 djangorestframework==3.11.0
 # docutils==0.15.2
