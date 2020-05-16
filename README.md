@@ -105,4 +105,5 @@ Now, we are all set to deploy our Machine Learning model on the local host. Run 
 ### 8. Testing the API
 Let’s test our REST API! We open our browser and type the following URL-```localhost:8002```
 # Final Testing Video of COVID-19:
-[![WEB-GUI](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/ScreenStart.png)](https://youtu.be/_YsPBzmmdE4)
+[![WEB-GUI](https://github.com/arjunparmar/COVID-19/blob/master/Data/Images/ScreenStart.png)](https://youtu.be/HM-Li8rkPOE)
+# Website: [COVID19 DETECTION USING CHEST X-RAY](https://covid-19-detect-1327.herokuapp.com/)
