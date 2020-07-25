@@ -9,5 +9,6 @@ app_name = 'predict'
 
 urlpatterns = [
     path('form/',views.formpage,name = 'form'),
-    path('predict/', views.predict_menu,name = 'menu')
+    path('predict/', views.predict_menu,name = 'menu'),
+    path('android/', views.android_predict,name = 'android_predict')
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_URL)

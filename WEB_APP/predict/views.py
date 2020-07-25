@@ -17,11 +17,19 @@ from flask import jsonify
 import os
 import datetime
 import time
+import json
+import base64
+import re
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 from WEB_APP.settings import BASE_DIR
 from WEB_APP.settings import MEDIA_DIR
 from django.core.files.base import ContentFile
 from django.core.files import File
 from django.http.response import StreamingHttpResponse
+from django.http import HttpResponse
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import threading
 import gzip
 from threading import Thread, Lock
@@ -143,3 +151,35 @@ def formpage(request):
         context_dict = {'form' : image_form, 'temp_form' : temp_form}
     print(context_dict)
     return render(request,'predict.html',context = context_dict)
+
+//This API is used to predict from photo  uploaded from android device. A base64 photo is sent from device and seerver responds with prediction
+@csrf_exempt
+def android_predict(request):                                       
+    print('Request method is : ' + request.method)
+    if request.method == 'POST' :
+        print('method is POST')
+        print('Body is : ' + str(request.body))
+        decoded = request.body.decode("UTF-8")
+        print(decoded)
+        name_image = decoded.split('&')[1].split('=')[1]
+        print('name is : ' + name_image)
+        b64_image = decoded.split('&')[0].split('=')[1]
+        print('Base64 image is : ' + b64_image)
+        missing_padding = len(b64_image)%4
+        print('Length is : ' + str(len(b64_image)))
+        if missing_padding : 
+            b64_image += '='*(4-missing_padding)
+        print('Modified Base64 image is : ' + b64_image)
+        print('New length is : ' + str(len(b64_image)))
+        image = PIL.Image.open(io.BytesIO(base64.b64decode(b64_image)))
+        target_image = image.resize((500,500),PIL.Image.ANTIALIAS)
+        print(type(target_image))
+        image_array = np.array(target_image)
+        image_file, x1 = predict_image(image_array,name_image)
+        # image = PIL.Image.open(io.BytesIO(b64_image))
+        context_dict = {'statusCode' : 0, 'statusMessage' : 'working', 'prediction' : x1}
+    else :
+        print('method is GET')
+        context_dict = {'statusCode' : 1, 'statusMessage' : 'request type is not post'}
+    print(context_dict)
+    return JsonResponse(context_dict, safe=False)
